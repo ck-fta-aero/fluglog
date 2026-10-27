@@ -1,0 +1,32 @@
+{
+  "name": "fluglog",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc --noEmit && vite build && node scripts/gen-sw.mjs",
+    "preview": "vite preview --host --port 4173 --strictPort",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run --reporter=default --reporter=json --outputFile.json=reports/unit.json",
+    "test:e2e": "playwright test",
+    "ak-report": "node scripts/ak-report.mjs",
+    "icons": "node scripts/gen-icons.mjs",
+    "deploy": "node scripts/deploy.mjs"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
